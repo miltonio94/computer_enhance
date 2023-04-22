@@ -50,11 +50,15 @@ To summarize, if a register's name ends in X we want to operate on the whole reg
 | 6 bits | 1bit | 1bit | 2bits | 3bits | 3bits |
 |--------+------+------+-------+-------+-------|
 
+
+
 | Field | Value  | Function                                            |
 |-------+--------+-----------------------------------------------------|
 | W     | 0 or 1 | Instruction operation on byte or word data          |
 | D     | 0 or 1 | Defines if the REG field is a destination or source |
 |-------+--------+-----------------------------------------------------|
+
+
 
 | Mod field encoding |                                            |
 |--------------------+--------------------------------------------|
@@ -65,6 +69,8 @@ To summarize, if a register's name ends in X we want to operate on the whole reg
 |                 10 | Register mode, 16 bit displacement follows |
 |                 11 | Register mode, no displacement             |
 |--------------------+--------------------------------------------|
+
+
 
 | Register Field Encoding |       |       |
 |-------------------------+-------+-------|
@@ -79,6 +85,7 @@ To summarize, if a register's name ends in X we want to operate on the whole reg
 |                     110 | DH    | SI    |
 |                     111 | BH    | DI    |
 |-------------------------+-------+-------|
+
 
 
 | Register/Memory field encoding |       |       |
@@ -96,6 +103,8 @@ To summarize, if a register's name ends in X we want to operate on the whole reg
 |                            110 | DH    | SI    |
 |                            111 | BH    | DI    |
 |--------------------------------+-------+-------|
+
+
 
 | Name | OPCODE | D | W | MOD | REG | R/M |
 |------+--------+---+---+-----+-----+-----|
