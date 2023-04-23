@@ -55,7 +55,7 @@ To summarize, if a register's name ends in X we want to operate on the whole reg
 | Field | Value  | Function                                            |
 |-------+--------+-----------------------------------------------------|
 | W     | 0 or 1 | Instruction operation on byte or word data          |
-| D     | 0 or 1 | Defines if the REG field is a destination or source |
+| D     | 0 or 1 | Defines if the REG field is a source or destination |
 |-------+--------+-----------------------------------------------------|
 
 
@@ -90,7 +90,7 @@ To summarize, if a register's name ends in X we want to operate on the whole reg
 
 | Register/Memory field encoding |       |       |
 |--------------------------------+-------+-------|
-|                       MOD = 11 |       |       |
+|                  when MOD = 11 |       |       |
 |--------------------------------+-------+-------|
 |                            R/M | W = 0 | W = 1 |
 |--------------------------------+-------+-------|
