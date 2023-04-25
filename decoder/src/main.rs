@@ -2,7 +2,7 @@
 // DONE: store file content as bytes
 // TODO: create a data model for the instruction code
 // TODO: figure out how to only parse the first byte that's for the op code
-use decoder::{OpCode, Reg, D, W};
+use decoder::{OpCode, Reg, D, R_M, W};
 use std::{fs::File, io::Read, path::Path};
 
 fn main() {
@@ -67,5 +67,6 @@ fn main() {
         };
 
         let reg = Reg::new(encoded_instruction.1);
+        let rm = R_M::new(encoded_instruction.1);
     }
 }
