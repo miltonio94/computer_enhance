@@ -2,7 +2,7 @@
 // DONE: store file content as bytes
 // TODO: create a data model for the instruction code
 // TODO: figure out how to only parse the first byte that's for the op code
-use decoder::{OpCode, Reg, D, R_M, W};
+use decoder::{AssemblyCode, OpCode, Reg, D, R_M, W};
 use std::{fs::File, io::Read, path::Path};
 
 fn main() {
@@ -40,8 +40,10 @@ fn main() {
 
     println!("{:?}", sorted_byte_stream);
 
+    let mut assembly_code: Vec<AssemblyCode> = Vec::with_capacity(sorted_byte_stream.len() + 1);
+
     for encoded_instruction in sorted_byte_stream.iter() {
-        let op_codes = match OpCode::try_from(encoded_instruction.0) {
+        let op_code = match OpCode::try_from(encoded_instruction.0) {
             Ok(op) => op,
             Err(err) => {
                 println!("Was not able to parse the opcode");
@@ -68,5 +70,20 @@ fn main() {
 
         let reg = Reg::new(encoded_instruction.1);
         let rm = R_M::new(encoded_instruction.1);
+
+        assembly_code.push(AssemblyCode {
+            op_code,
+            destination,
+            word,
+            reg,
+            rm,
+        });
+
+        let assembly: Vec<String> = assembly_code
+            .iter()
+            .map(|code| code.to_line_of_code())
+            .collect();
+
+        println!("{:?}", assembly);
     }
 }
