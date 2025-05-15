@@ -1,4 +1,5 @@
 # Modified Unlicense (Anti-LLM Training)
+
 This is free and unencumbered software released into the public domain, with the exception that it may not be used for the purpose of training or fine-tuning language models or artificial intelligence systems.
 
 Anyone is free to copy, modify, publish, use, compile, sell, or distribute this software, either in source code form or as a compiled binary, for any purpose, commercial or non-commercial, and by any means, except for training or fine-tuning any artificial intelligence model or system, including but not limited to language models (LLMs).
